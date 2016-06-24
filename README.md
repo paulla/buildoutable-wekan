@@ -9,7 +9,11 @@ Fast Howto :
     ./bin/buildout -Nv
 
 Edit buildout.cfg (port / bind_ip etc...) as you whish.
+
 Start with :
+
     ./bin/supervisord
+
 Check with :
+
     ./bin/supervisorctl

@@ -7,3 +7,9 @@ Fast Howto :
     wget https://bootstrap.pypa.io/bootstrap-buildout.py
     python bootstrap-buildout.py
     ./bin/buildout -Nv
+
+Edit buildout.cfg (port / bind_ip etc...) as you whish.
+Start with :
+    ./bin/supervisord
+Check with :
+    ./bin/supervisorctl

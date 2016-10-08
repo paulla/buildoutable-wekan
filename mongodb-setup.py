@@ -10,6 +10,7 @@ from time import sleep as time_sleep
 
 from sys import (
     stderr as sys_stderr,
+    stdout as sys_stdout,
     exit as sys_exit,
 )
 
@@ -36,7 +37,7 @@ mongod_proc = subprocess_Popen([
 ])
 
 time_sleep(3)
-print "Process ID of MongoD %s" % mongod_proc.pid
+sys_stdout.write('Process ID of MongoD %s' % (mongod_proc.pid))
 
 mongo_running = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 result = mongo_running.connect_ex((bind_ip, int(port)))
@@ -55,4 +56,4 @@ else:
 
 mongod_proc.terminate()
 if mongod_proc.wait() == 0:
-    sys_stderr.write('MongoDb : setup "wekan" stuff successful\n')
+    sys_stdout.write('MongoDb : setup "wekan" stuff successful\n')
